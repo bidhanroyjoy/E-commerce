@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar, Footer, Sidebar } from "./components";
-import { ErrorPage, CheckoutPage, AboutPage, HomePage } from "./pages";
+import { ErrorPage, CheckoutPage, AboutPage, HomePage, ProductsPage } from "./pages";
 
 function App() {
   return (
@@ -17,6 +17,10 @@ function App() {
           <Route path='/about'>
             <AboutPage />
           </Route>
+          <Route exact path='/products'>
+            <ProductsPage />
+          </Route>
+          <Route path='/products/:id' />
           <Route path='/checkout'>
             <CheckoutPage />
           </Route>
