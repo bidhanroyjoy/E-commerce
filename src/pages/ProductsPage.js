@@ -1,18 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import { Filters, PageHero, ProductList, Sort } from "../components";
 
 const ProductsPage = () => {
-  return(
-      <main>
-      <Wrapper className='page'>
-          <div className='section-center products'>
-                productpage
-          </div>
-
+  return (
+    <main>
+    <PageHero title='products' />
+      <Wrapper className="page">
+        <div className="section-center products">
+            <Filters />
+            <div>
+                <Sort/>
+                <ProductList/>
+            </div>
+        </div>
       </Wrapper>
-      </main>
-
-  )
+    </main>
+  );
 };
 
 const Wrapper = styled.div`
