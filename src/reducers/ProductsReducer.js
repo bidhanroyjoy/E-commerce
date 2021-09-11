@@ -11,13 +11,13 @@ import {
 
 const ProductsReducer = (state, action) => {
   if (action.type === SIDEBAR_OPEN) {
-    return { ...state, isSidebarOpen: true };
+    return { ...state, isSidebarOpen: true }
   }
   if (action.type === SIDEBAR_CLOSE) {
-    return { ...state, isSidebarOpen: false };
+    return { ...state, isSidebarOpen: false }
   }
   if (action.type === GET_PRODUCTS_BEGIN) {
-    return { ...state, products_loading: true };
+    return { ...state, products_loading: true }
   }
   if (action.type === GET_PRODUCTS_SUCCESS) {
     const featured_products = action.payload.filter(
@@ -55,6 +55,6 @@ const ProductsReducer = (state, action) => {
     }
   }
   throw new Error(`No Matching "${action.type}" action.type`);
-};
+}
 
 export default ProductsReducer;
