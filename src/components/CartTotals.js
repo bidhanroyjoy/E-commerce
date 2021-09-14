@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useCartContext } from '../context/CartContext'
 // import { useUserContext } from '../context/UserContext'
 import { formatPrice } from '../utils/helpers'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 const CartTotals = () => {
   const { total_amount, shipping_fee } = useCartContext()
 //   const { myUser, loginWithRedirect } = useUserContext()

@@ -30,7 +30,7 @@ const SingleProductPage = () => {
     if (error) {
       setTimeout(() => {
         history.push('/')
-      }, [3000])
+      }, 3000)
     }
   }, [error])
   if (loading) {
