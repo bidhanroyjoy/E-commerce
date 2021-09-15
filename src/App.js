@@ -1,7 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar, Footer, Sidebar } from "./components";
-import { ErrorPage, CheckoutPage, AboutPage, HomePage, ProductsPage, SingleProductPage, CartPage } from "./pages";
+import {
+  ErrorPage,
+  CheckoutPage,
+  AboutPage,
+  HomePage,
+  ProductsPage,
+  SingleProductPage,
+  CartPage,
+} from "./pages";
 
 function App() {
   return (
@@ -10,23 +18,23 @@ function App() {
         <Navbar />
         <Sidebar />
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path='/about'>
+          <Route path="/about">
             <AboutPage />
           </Route>
-          <Route path='/cart'>
+          <Route path="/cart">
             <CartPage />
           </Route>
-          <Route exact path='/products'>
+          <Route exact path="/products">
             <ProductsPage />
           </Route>
-          <Route path='/products/:id' children={<SingleProductPage/>} />
-          <Route path='/checkout'>
+          <Route path="/products/:id" children={<SingleProductPage />} />
+          <Route path="/checkout">
             <CheckoutPage />
           </Route>
-          <Route path='*'>
+          <Route path="*">
             <ErrorPage />
           </Route>
         </Switch>

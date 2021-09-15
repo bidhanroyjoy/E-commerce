@@ -1,40 +1,40 @@
-import React from 'react'
-import styled from 'styled-components'
-import logo from '../assets/logo1.png'
-import {Link} from 'react-router-dom'
-import {FaBars} from 'react-icons/fa' 
-import {links} from '../utils/Constants'
-import CartButtons from './CartButtons'
-import { useProductsContext } from '../context/ProductsContext'
+import React from "react";
+import styled from "styled-components";
+import logo from "../assets/logo1.png";
+import { Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import { links } from "../utils/Constants";
+import CartButtons from "./CartButtons";
+import { useProductsContext } from "../context/ProductsContext";
 
-const Navbar=()=>{
-  const {openSidebar} =useProductsContext();
-    return(
-        <NavContainer>
-          <div className='nav-center'>
-            <div className='nav-header'>
-              <Link to='/'>
-                <img src={logo} alt='comfy sloth' />
-              </Link>
-              <button type='button' className='nav-toggle' onClick={openSidebar}>
-              <FaBars />
-              </button>
-            </div>
-            <ul className='nav-links'>
-              {links.map((link)=>{
-                const {id,text,url}=link 
-                return(
-                  <li key={id}>
-                    <Link to={url}>{text}</Link>
-                  </li>
-                )
-              })}    
-            </ul>
-            <CartButtons />
-          </div>
-        </NavContainer>  
-    );
-}
+const Navbar = () => {
+  const { openSidebar } = useProductsContext();
+  return (
+    <NavContainer>
+      <div className="nav-center">
+        <div className="nav-header">
+          <Link to="/">
+            <img src={logo} alt="comfy sloth" />
+          </Link>
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
+            <FaBars />
+          </button>
+        </div>
+        <ul className="nav-links">
+          {links.map((link) => {
+            const { id, text, url } = link;
+            return (
+              <li key={id}>
+                <Link to={url}>{text}</Link>
+              </li>
+            );
+          })}
+        </ul>
+        <CartButtons />
+      </div>
+    </NavContainer>
+  );
+};
 
 const NavContainer = styled.nav`
   height: 5rem;
@@ -101,7 +101,6 @@ const NavContainer = styled.nav`
       display: grid;
     }
   }
-`
+`;
 
 export default Navbar;
-
